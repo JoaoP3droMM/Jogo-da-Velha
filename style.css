@@ -1,0 +1,261 @@
+body {
+    font-family: sans-serif;
+    background-color: #221f1f;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    height: 100vh;
+    justify-content: flex-start; /* Mantém o cabeçalho visível no topo */
+}
+
+button#start{
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #3abe50;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 12rem;
+}
+
+input{
+    border: solid transparent;
+    width: 15em;
+    height: 2.5em;
+    padding-left: 0.8em;
+    outline: none;
+    overflow: hidden;
+    background-color: #F3F3F3;
+    border-radius: 10px;
+    transition: all 0.5s;
+    margin: 10px 20px 20px 10px;
+}
+
+input:hover,
+input:focus {
+    border: solid #25a340;
+    box-shadow: 0px 0px 0px 2px #42c45e;
+    background-color: white;
+}
+
+label {
+    color: white;
+}
+
+h1, h2, hr {
+    margin: 10px 0;
+    color: white;
+}
+
+.game-container {
+    display: flex;
+    align-items: flex-start;
+    justify-content: center;
+    margin-top: 20px;
+}
+
+#gameBoard {
+    background-color: #494141;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: repeat(3, 1fr);
+    gap: .5rem;
+    max-width: 100%;
+    width: 18rem;
+    height: 18rem;
+    margin-right: 40px;
+}
+
+#gameBoard span {
+    background-color: #fffdfd;
+    display: grid;
+    place-content: center;
+    font-size: 4rem;
+}
+
+#gameBoard span.win {
+    background-color: #25a340;
+}
+
+.cursor-pointer {
+    cursor: pointer;
+}
+
+#sideButtons {
+    margin-top: 50px;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+    justify-content: flex-start;
+}
+
+#sideButtons button {
+    padding: 0.75rem;
+    font-size: 1.1rem;
+    cursor: pointer;
+    background-color: #586e75;
+    color: white;
+    border: none;
+    border-radius: 5px;
+    width: 12rem;
+}
+
+#sideButtons button:hover {
+    background-color: #71868d;
+}
+
+/* Responsividade para telas menores */
+@media (max-width: 768px) {
+    .game-container {
+        flex-direction: column;
+        align-items: center;
+    }
+
+    #gameBoard {
+        width: 15rem;
+        height: 15rem;
+        margin-right: 0;
+        margin-bottom: 20px;
+    }
+
+    #gameBoard span {
+        font-size: 3rem;
+    }
+
+    #sideButtons {
+        width: 100%;
+        align-items: center;
+    }
+
+    #sideButtons button {
+        width: 100%;
+    }
+}
+
+/* Modal estilização */
+.modal {
+  display: none;
+  position: fixed;
+  z-index: 1;
+  left: 0;
+  top: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
+  justify-content: center;
+  align-items: center;
+}
+
+.modal-content {
+  background-color: white;
+  padding: 20px;
+  border-radius: 10px;
+  text-align: center;
+  position: relative; /* Para permitir o posicionamento absoluto do botão close */
+}
+
+.modal-content h2 {
+  color: black;
+  margin-bottom: 30px;
+}
+
+.modal-content button#close {
+    position: absolute;
+    top: 5px; /* Ajustado para o canto superior do modal */
+    left: 5px; /* Ajustado para o canto esquerdo do modal */
+    font-size: 0.8rem; /* Tamanho da fonte reduzido */
+    padding: 0.2rem 0.4rem; /* Ajuste no padding para deixar menor */
+    cursor: pointer;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 50%; /* Arredonda o botão */
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.modal-content button {
+  padding: 0.75rem;
+  font-size: 1.1rem;
+  cursor: pointer;
+  background-color: #586e75;
+  color: white;
+  border: none;
+  margin-right: 15px;
+  border-radius: 8px;
+  width: 5rem;
+}
+
+.modal-content button:hover {
+  background-color: #71868d;
+}
+
+/* MODAL QR CODE */
+
+.modalQR {
+    display: none; /* Inicialmente oculto */
+    position: fixed;
+    z-index: 1;
+    left: 0;
+    top: 0;
+    width: 100%;
+    height: 100%;
+    overflow: auto;
+    background-color: rgba(0, 0, 0, 0.8); /* Fundo semi-transparente */
+    align-items: center; /* Centraliza verticalmente */
+    justify-content: center; /* Centraliza horizontalmente */
+    display: flex;
+}
+
+.qrModal-content {
+    background-color: white;
+    margin: auto;
+    padding: 20px;
+    border: 1px solid #888;
+    width: 300px; /* Largura do modal */
+    display: flex;
+    flex-direction: column; /* Coloca o botão de fechar e imagem em coluna */
+    align-items: center; /* Centraliza conteúdo do modal */
+    position: relative;
+}
+
+.qrModal-content img { /* Corrigido de 'image' para 'img' */
+    width: 200px;
+    height: 200px;
+    margin: auto; /* Centraliza a imagem */
+}
+
+.qrModal-content button#closeQR {
+    position: absolute;
+    top: 8px; /* Posição ajustada para o canto superior direito do modal */
+    left: 8px; /* Alinha à direita */
+    font-size: 0.8rem; 
+    padding: 0.2rem 0.4rem; 
+    cursor: pointer;
+    color: white;
+    background-color: red;
+    border: none;
+    border-radius: 50%; 
+    width: 25px;
+    height: 25px;
+    line-height: 25px;
+    text-align: center;
+}
+
+.custom-confirm-button {
+    background-color: #ff5733; /* Cor personalizada */
+    color: white;
+    border: none;
+    border-radius: 5px;
+    padding: 10px 20px;
+    font-size: 16px;
+}
+  
+.custom-confirm-button:hover {
+    background-color: #c4451b; /* Cor no hover */
+}

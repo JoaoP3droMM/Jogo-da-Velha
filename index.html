@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <title>Jogo da Velha</title>
+  <link rel="stylesheet" href="style.css">
+  <script src="script.js" defer></script>
+  <script src="node_modules/sweetalert2/dist/sweetalert2.min.js"></script>
+  <link rel="stylesheet" href="node_modules/sweetalert2/dist/sweetalert2.min.css">  
+</head>
+<body>
+  <h1>Jogo da Velha</h1>
+  <label for="player1">X<input type="text" id="player1" placeholder="Nome do Jogador 1"></label>
+  <label for="player2">O<input type="text" id="player2" placeholder="Nome do Jogador 2"></label>
+  <button id="start">PLAY</button>
+  <br>
+  <h2>Vez de: <span id="turnPlayer"></span></h2>
+  
+  <div class="game-container">
+    <section id="gameBoard">
+      <span class="cursor-pointer" data-region="0.0"></span>
+      <span class="cursor-pointer" data-region="0.1"></span>
+      <span class="cursor-pointer" data-region="0.2"></span>
+      <span class="cursor-pointer" data-region="1.0"></span>
+      <span class="cursor-pointer" data-region="1.1"></span>
+      <span class="cursor-pointer" data-region="1.2"></span>
+      <span class="cursor-pointer" data-region="2.0"></span>
+      <span class="cursor-pointer" data-region="2.1"></span>
+      <span class="cursor-pointer" data-region="2.2"></span>
+    </section>
+    
+    <div id="sideButtons">
+      <button id="playerVsPlayer">Jogador vs Jogador</button>
+      <button id="playerVsIA">Jogador vs IA</button>
+      <button id="btnQrCode">QR Code</button>
+    </div>
+  </div>
+
+  <!-- Modal de seleção de dificuldade -->
+  <div id="difficultyModal" class="modal">
+    <div class="modal-content">
+      <button id="close">X</button>
+      <h2>Escolha a dificuldade:</h2>
+      <button id="easy">Fácil</button>
+      <button id="medium">Médio</button>
+      <button id="hard">Difícil</button>
+      <button id="insane">Insano</button>
+    </div>
+  </div>
+
+  <!-- Modal QR Code -->
+    <!-- Modal de seleção de dificuldade -->
+  <div id="qrCodeModal" class="modalQR">
+    <div class="qrModal-content">
+      <button id="closeQR">X</button>
+      <img id="qrCodeImage" src="imagens/QRcode.png" width="200" height="200" alt="QR Code">
+    </div>
+  </div>
+
+</body>
+</html>
