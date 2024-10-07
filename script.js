@@ -140,6 +140,13 @@ function initializeGame() {
     element.classList.add('cursor-pointer');
     element.addEventListener('click', handleBoardClick);
   });
+
+  // Adicione esta lógica para fazer a IA jogar primeiro no modo "insano"
+  if (gameMode === 'vsIA' && aiDifficulty === 'insane') {
+    setTimeout(() => {
+      aiMove(); // A IA faz o primeiro movimento
+    }, 500);
+  }
 }
 
 function getWinRegions() {

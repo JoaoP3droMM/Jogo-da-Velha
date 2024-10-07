@@ -1,5 +1,6 @@
 {
   "dependencies": {
+    "@tensorflow/tfjs": "^4.21.0",
     "@tensorflow/tfjs-vis": "^1.5.1",
     "sweetalert2": "^11.14.1"
   },
