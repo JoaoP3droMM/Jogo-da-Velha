@@ -10,6 +10,10 @@ body {
     justify-content: flex-start; /* Mantém o cabeçalho visível no topo */
 }
 
+#insane{
+    display: none;
+}
+
 button#start{
     padding: 0.75rem;
     font-size: 1.1rem;
