@@ -1,5 +1,3 @@
-Aqui está um modelo de README para o seu repositório:  
-
 ```markdown
 # Jogo da Velha com Deep Learning
 
@@ -34,10 +32,6 @@ Este projeto é uma implementação de um **Jogo da Velha (Tic-Tac-Toe)** utiliz
 
 - Um navegador atualizado (recomenda-se o **Google Chrome** ou **Firefox**) com suporte para TensorFlow.js.
 - Conexão com a internet para carregar bibliotecas externas, caso aplicável.
-
-## Capturas de Tela
-
-> (Adicione aqui capturas de tela do jogo mostrando os modos de jogo e a interface.)
 
 ## Próximos Passos
 
